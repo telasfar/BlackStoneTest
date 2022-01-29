@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tCc-xg-yV9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Events View Controller-->
+        <scene sceneID="Rkj-19-CEg">
+            <objects>
+                <viewController storyboardIdentifier="EventsViewController" id="tCc-xg-yV9" customClass="EventsViewController" customModule="BlackStoneTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lvJ-IL-k3p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XwN-73-mta" customClass="RoundedShadowView" customModule="BlackStoneTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="134.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkd-JB-zIT">
+                                        <rect key="frame" x="103.5" y="62.5" width="207" height="41"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="hyperBlue"/>
+                                <constraints>
+                                    <constraint firstItem="Gkd-JB-zIT" firstAttribute="centerY" secondItem="XwN-73-mta" secondAttribute="centerY" constant="16" id="EhJ-D8-Hb3"/>
+                                    <constraint firstItem="Gkd-JB-zIT" firstAttribute="width" secondItem="XwN-73-mta" secondAttribute="width" multiplier="0.5" id="I3l-LI-NW7"/>
+                                    <constraint firstItem="Gkd-JB-zIT" firstAttribute="centerX" secondItem="XwN-73-mta" secondAttribute="centerX" id="lTl-6J-HEg"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sdl-Do-wf7">
+                                <rect key="frame" x="16" y="142.5" width="382" height="44.5"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WfH-Bc-uXp" customClass="ButtonRounded" customModule="BlackStoneTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="88" height="44.5"/>
+                                        <color key="backgroundColor" red="1" green="0.55768383669999999" blue="0.13291826910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                        <color key="tintColor" red="0.0" green="0.47956615689999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="SEARCH"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovg-D3-cya" customClass="CustomTextField" customModule="BlackStoneTest" customModuleProvider="target">
+                                        <rect key="frame" x="96" y="0.0" width="286" height="44.5"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="txtFieldChanged:" destination="tCc-xg-yV9" eventType="editingChanged" id="T31-dT-ENx"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WfH-Bc-uXp" firstAttribute="width" secondItem="sdl-Do-wf7" secondAttribute="width" multiplier="0.230366" id="7py-Vz-6T6"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="160" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ADh-Ez-shc" customClass="TanibleView" customModule="BlackStoneTest" customModuleProvider="target">
+                                <rect key="frame" x="2" y="195" width="410" height="643"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="4" maxX="0.0" maxY="4"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4zE-Mj-Sm2"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XwN-73-mta" firstAttribute="trailing" secondItem="4zE-Mj-Sm2" secondAttribute="trailing" id="1BB-PS-pre"/>
+                            <constraint firstItem="ADh-Ez-shc" firstAttribute="top" secondItem="sdl-Do-wf7" secondAttribute="bottom" constant="8" id="5eF-R7-17c"/>
+                            <constraint firstItem="sdl-Do-wf7" firstAttribute="height" secondItem="lvJ-IL-k3p" secondAttribute="height" multiplier="0.05" id="7W6-bF-oak"/>
+                            <constraint firstItem="XwN-73-mta" firstAttribute="leading" secondItem="4zE-Mj-Sm2" secondAttribute="leading" id="EC5-JR-eoV"/>
+                            <constraint firstItem="XwN-73-mta" firstAttribute="height" secondItem="lvJ-IL-k3p" secondAttribute="height" multiplier="0.15" id="Ge4-Xx-WvJ"/>
+                            <constraint firstItem="4zE-Mj-Sm2" firstAttribute="trailing" secondItem="sdl-Do-wf7" secondAttribute="trailing" constant="16" id="aOh-BA-uiN"/>
+                            <constraint firstItem="sdl-Do-wf7" firstAttribute="top" secondItem="XwN-73-mta" secondAttribute="bottom" constant="8" id="eFt-mW-LA8"/>
+                            <constraint firstItem="XwN-73-mta" firstAttribute="top" secondItem="lvJ-IL-k3p" secondAttribute="top" id="iZs-9l-VC8"/>
+                            <constraint firstItem="4zE-Mj-Sm2" firstAttribute="bottom" secondItem="ADh-Ez-shc" secondAttribute="bottom" constant="24" id="nec-lw-cQd"/>
+                            <constraint firstItem="sdl-Do-wf7" firstAttribute="leading" secondItem="4zE-Mj-Sm2" secondAttribute="leading" constant="16" id="oBj-Ri-AmF"/>
+                            <constraint firstItem="ADh-Ez-shc" firstAttribute="leading" secondItem="4zE-Mj-Sm2" secondAttribute="leading" constant="2" id="qMi-oq-hgK"/>
+                            <constraint firstItem="4zE-Mj-Sm2" firstAttribute="trailing" secondItem="ADh-Ez-shc" secondAttribute="trailing" constant="2" id="r5F-Ot-rdL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSearch" destination="WfH-Bc-uXp" id="SZw-e1-1t6"/>
+                        <outlet property="eventTableView" destination="ADh-Ez-shc" id="ZYm-0h-Oz2"/>
+                        <outlet property="titleView" destination="XwN-73-mta" id="oRD-zk-KMU"/>
+                        <outlet property="txtFiedSerch" destination="ovg-D3-cya" id="d3D-eo-XmD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qeB-cL-Tl5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="363.768115942029" y="124.55357142857142"/>
+        </scene>
+        <!--Event DetailsVC-->
+        <scene sceneID="K9s-hQ-vmH">
+            <objects>
+                <viewController storyboardIdentifier="EventDetailsVC" id="Xlg-8M-Dyt" customClass="EventDetailsVC" customModule="BlackStoneTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqI-FM-8pv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ynz-iH-pEb" customClass="RoundedShadowView" customModule="BlackStoneTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="134.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7fj-G3-she">
+                                        <rect key="frame" x="16" y="63" width="41.5" height="40.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnG-Co-yXO">
+                                                <rect key="frame" x="0.0" y="0.0" width="41.5" height="40.5"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="back"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACo-rP-19k">
+                                        <rect key="frame" x="62" y="62.5" width="290" height="41"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="hyperBlue"/>
+                                <constraints>
+                                    <constraint firstItem="ACo-rP-19k" firstAttribute="centerX" secondItem="Ynz-iH-pEb" secondAttribute="centerX" id="5EV-m5-fCv"/>
+                                    <constraint firstItem="7fj-G3-she" firstAttribute="height" secondItem="Ynz-iH-pEb" secondAttribute="height" multiplier="0.3" id="Epd-0l-wwg"/>
+                                    <constraint firstItem="7fj-G3-she" firstAttribute="leading" secondItem="Ynz-iH-pEb" secondAttribute="leading" constant="16" id="Luv-RF-faO"/>
+                                    <constraint firstItem="7fj-G3-she" firstAttribute="centerY" secondItem="ACo-rP-19k" secondAttribute="centerY" id="Rbd-G2-lSA"/>
+                                    <constraint firstItem="7fj-G3-she" firstAttribute="width" secondItem="Ynz-iH-pEb" secondAttribute="width" multiplier="0.1" id="f8L-5p-An0"/>
+                                    <constraint firstItem="ACo-rP-19k" firstAttribute="width" secondItem="Ynz-iH-pEb" secondAttribute="width" multiplier="0.7" id="qSo-xo-fAa"/>
+                                    <constraint firstItem="ACo-rP-19k" firstAttribute="centerY" secondItem="Ynz-iH-pEb" secondAttribute="centerY" constant="16" id="v30-6v-9GO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="j1j-dU-vUC"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ynz-iH-pEb" firstAttribute="height" secondItem="tqI-FM-8pv" secondAttribute="height" multiplier="0.15" id="1P6-Hs-s8i"/>
+                            <constraint firstItem="Ynz-iH-pEb" firstAttribute="leading" secondItem="j1j-dU-vUC" secondAttribute="leading" id="9Wt-4a-7FJ"/>
+                            <constraint firstItem="Ynz-iH-pEb" firstAttribute="top" secondItem="tqI-FM-8pv" secondAttribute="top" id="p28-st-S0F"/>
+                            <constraint firstItem="Ynz-iH-pEb" firstAttribute="trailing" secondItem="j1j-dU-vUC" secondAttribute="trailing" id="vWQ-Ov-g7E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnBack" destination="WnG-Co-yXO" id="5Xa-MA-TBV"/>
+                        <outlet property="titleView" destination="Ynz-iH-pEb" id="0mV-GN-gUZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JM9-fk-9Wg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="13.5" height="25"/>
+        <namedColor name="hyperBlue">
+            <color red="0.210999995470047" green="0.47900000214576721" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
